@@ -8,14 +8,13 @@ import { QuestionsService } from '../questions.service';
   providers: [QuestionsService]
 })
 export class QuestionGetComponent implements OnInit {
-
   constructor(
     private questionservice: QuestionsService,
   ) { }
 
   ngOnInit() {
     //.getQuestion();
-    this.getQuestion();
+    this.questionservice.getQuestion();
   }
 
  // getQuestion(): void {
