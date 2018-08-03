@@ -4,21 +4,22 @@ import { QuestionsService } from '../questions.service';
 @Component({
   selector: 'app-question-get',
   templateUrl: './question-get.component.html',
-  styleUrls: ['./question-get.component.css']
+  styleUrls: ['./question-get.component.css'],
+  providers: [QuestionsService]
 })
 export class QuestionGetComponent implements OnInit {
-  question: question;
 
-  constructor(private questionService: QuestionsService) { }
+  constructor(
+    private questionservice: QuestionsService,
+  ) { }
 
   ngOnInit() {
+    //.getQuestion();
     this.getQuestion();
   }
 
-  getQuestion(): void {
-    this.questionService.getQuestion()
-      .subscribe(question => this.question = question);
-  }
-
+ // getQuestion(): void {
+   // this.questionService.getQuestion().subscribe(returnvalue => this.question = returnvalue);
+ // }
 
 }

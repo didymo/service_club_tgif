@@ -8,8 +8,6 @@ import { QuestionsService } from '../questions.service';
   styleUrls: ['./question-show.component.css']
 })
 export class QuestionShowComponent implements OnInit {
-  question: question;
-
   constructor(
 
     private questionService: QuestionsService,
@@ -21,8 +19,7 @@ export class QuestionShowComponent implements OnInit {
   }
 
   getQuestion(): void {
-    this.questionService.getQuestion()
-      .subscribe(question => this.question = question);
+    this.questionService.getQuestion();
   }
 
 }
